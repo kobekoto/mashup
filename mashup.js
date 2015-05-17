@@ -23,6 +23,7 @@ if (navigator.geolocation) {
         url: 'https://api.instagram.com/v1/media/search?lat=' + lat + '&lng=' + lon + '&client_id=ce95cb4e56c146c994457b48a839f6a8',
         dataType: 'jsonp',
         success: function(result){
+          console.log(result);
           for (var i = 0; i < result.data.length; i++) {
               var url = result.data[i].images.thumbnail.url;
              $('body').append('<img src="' + url + '"/>');
